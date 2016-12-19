@@ -1,0 +1,112 @@
+@(user: models.users.User)
+
+@main("Home", user) {
+<!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header" style="text-align:center">Check Out our best sellers here!
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Project One -->
+        <div class="row">
+            <div class="col-md-5">
+                <a href="@routes.HomeController.products()">
+                    <img class="img-responsive" src="http://gearnuke.com/wp-content/uploads/2016/06/fifa-17-box-art.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-7">
+                <h3>Fifa 17</h3>
+                <h4>Sports Game</h4>
+                <p>New Football Worlds - Frostbite injects even more detail into the worlds of FIFA 17. Experience all new environments like tunnels, locker rooms, the manager's office, and the team plane. Experience Life in the Premier League - For the first time ever in FIFA, live your story on and off the pitch as the Premier League's next rising star, Alex Hunter. Play on any club in the Premier league, for authentic managers and alongside some of the best players on the planet. Experience brand new worlds in FIFA 17, all while navigating your way through the emotional highs and lows of The Journey.</p>
+                <a class="btn btn-danger" href="@routes.HomeController.products()">€59.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Two -->
+        <div class="row">
+            <div class="col-md-5">
+                <a href="@routes.HomeController.products()">
+                    <img class="img-responsive" src="http://cdn.cgmagonline.com/wp-content/uploads/2015/05/cover-ps4-the-witcher-3-wild-hunt.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-7">
+                <h3>The Witcher 3: Wild Hunt</h3>
+                <h4>Role Playing Game (RPG)</h4>
+                <p>Unparalleled novel-like story, spanning over 100 hours of gameplay With over 100 hours of core and side-quest gameplay, The Witcher combines the intense, plot-driven pull of traditional RPGs with the freedom of choice only open world games can offer. Develop Geralt's skills to create your unique gameplay experience, make choices and face their consequences that will stay with you throughout the entire game. Genre-defining, truly next generation audio-visual fidelity Built exclusively for next-generation hardware: PlayStation 4, Xbox One and PC, The Witcher 3: Wild Hunt marks a new era in RPG visual quality. Raising the bar for the entire genre, with its deeply integrated 7.1 audio and jaw-dropping graphics powered by CD Projekt RED's proprietary REDengine 3, The Witcher 3: Wild Hunt promises an entirely new kind of experience.</p>
+                <a class="btn btn-warning" href="@routes.HomeController.products()">€39.99 <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Three -->
+        <div class="row">
+            <div class="col-md-5">
+                <a href="@routes.HomeController.products()">
+                    <img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/I/816M5LfZtCL._SL1500_.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-7">
+                <h3>Rocket League: Collectors Edition</h3>
+                <h4>Sports Game</h4>
+                <p>Includes every item from the previously-released DLC alongside four exclusive vehicles
+Fantastic Multiplayer: 4-Player Splitscreen, 8-Player Online, Ranked and Unranked play
+Game modes include Exhibition , Unfair Mode and a full Offline Season Mode
+Personalize your vehicle with hundreds of different items for more THAN 100 BILLION possible combinations!
+Includes Replay Viewer, customizable controls, Mutator game-variants (Ball Type, Speed, Boost Strength etc), and more!</p>
+                <a class="btn btn-primary" href="@routes.HomeController.products()">€19.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Four -->
+        <div class="row">
+
+            <div class="col-md-5">
+                <a href="@routes.HomeController.products()">
+                    <img class="img-responsive" src="http://thetrashcan.co/wp-content/uploads/2016/05/overwatch-cover.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-7">
+                <h3>Overwatch: Origins Edition</h3>
+                <h4>First Person Shooter (FPS)</h4>
+                <p>Overwatch is a team-based shooter where heroes to battle in a world of conflict
+Overwatch features a wide array of unique heroes, ranging from a time-jumping adventurer, to an armored, rocket-hammer-wielding warrior, to a transcendent robot monk
+Every hero plays differently, and mastering their abilities is the key to unlocking their potential. No two heroes are the same
+Teams of heroes do battle across the planet. From protecting the secrets of the mysterious Temple of Anubis, to safely escorting an EMP device through King's Row, the world is your battlefield.</p>
+                <a class="btn btn-success" href="@routes.HomeController.products()">€49.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Project Five -->
+        <div class="row">
+            <div class="col-md-5">
+                <a href="@routes.HomeController.products()">
+                    <img class="img-responsive" src="http://s3.thcdn.com/productimg/600/600/11276280-9474396707044424.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-md-7">
+                <h3>Call of Duty: Infinite Warfare</h3>
+                <h4>First Person Shooter (FPS)</h4>
+                <p>Infinity Ward, the award-winning studio that helped create the blockbuster Call of Duty franchise, reaches new heights with Call of Duty: Infinite Warfare.
+At its core, Infinite Warfare returns to the roots of the franchise where cinematic, immersive storytelling takes center stage as told through an unfolding large-scale war and epic battles that deliver an authentic Call of Duty experience.
+Delivering a rich and engaging narrative in a setting unlike anything to date in a Call of Duty game, the campaign is a return to the franchise's gritty, military roots throughout new environments never before seen in the franchise.</p>
+                <a class="btn btn-danger" href="@routes.HomeController.products()">€69.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+        <br>
+        <a class="btn btn-primary2" href="@routes.HomeController.checkout()">Checkout here!<span class="glyphicon glyphicon-chevron-right"></span></a>
+        <!-- /.row -->
+}

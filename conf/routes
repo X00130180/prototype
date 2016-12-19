@@ -1,0 +1,66 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index()
+GET     /genre                      controllers.HomeController.genre
+GET     /deals                      controllers.HomeController.deals
+GET     /contactus                  controllers.HomeController.contactus
+GET     /sports                     controllers.HomeController.sports
+GET     /rpg                        controllers.HomeController.rpg
+GET     /fps                        controllers.HomeController.fps
+GET     /openworld                  controllers.HomeController.openworld
+GET     /action                     controllers.HomeController.action
+GET     /explore                    controllers.HomeController.explore
+GET     /strategy                   controllers.HomeController.strategy
+GET     /simulation                 controllers.HomeController.simulation
+GET     /early                      controllers.HomeController.early
+GET     /products                   controllers.HomeController.products(cat:Long ?=0L)
+GET     /checkout                   controllers.HomeController.checkout
+
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /public/*file      controllers.Assets.at(path="/public", file)
+
+################
+# Admin Routes #
+################
+# products accepts a parameter default to 0 (Long)
+GET     /admin/products               controllers.AdminController.products(cat:Long ?=0L)
+
+# Request to load the add product form
+GET     /admin/addproduct                  controllers.AdminController.addProduct
+
+# Data submitted by the form
+POST    /admin/addProductSubmit            controllers.AdminController.addProductSubmit
+
+# Delete a product by an id passed as a parameter
+GET    /admin/delProduct/:id               controllers.AdminController.deleteProduct(id: Long)
+
+# Update a product by id
+GET	    /admin/updateProduct/:id        controllers.AdminController.updateProduct(id: Long)
+
+################
+# Login routes #
+################
+GET     /login                       controllers.security.LoginController.login
+POST    /loginSubmit                 controllers.security.LoginController.loginSubmit
+GET     /logout                      controllers.security.LoginController.logout
+
+
+
+# An example controller showing how to use dependency injection
+GET     /count                       controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                     controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                controllers.Assets.versioned(path="/public", file: Asset)

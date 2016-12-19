@@ -1,0 +1,26 @@
+@(user: models.users.User)
+
+@main("Contact Us", user) {
+<!-- Page Content -->
+<!-- Page Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header" style="text-align:center">Contact Us here!</h1>
+    </div>
+</div>
+<!-- /.row -->
+
+<!-- Project One -->
+<div class="row">
+    <div class="col-md-5">
+        <a href="#">
+            <img class="img-responsive" src="http://www.wtw.waw.pl/files/page/znaki/logo%20wtw.JPG" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <p class="contact">If you have any queries or complaints, please make sure you contact us at: <b>WTWGaming@@gmail.com</b></p>
+    </div>
+</div>
+<br>
+        <a class="btn btn-primary2" href="@routes.HomeController.checkout()">Checkout here!<span class="glyphicon glyphicon-chevron-right"></span></a>
+}

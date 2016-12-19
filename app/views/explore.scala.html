@@ -1,0 +1,92 @@
+@(user: models.users.User)
+
+@main("Explore", user){
+<!-- Page Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header" style="text-align:center">Explore the unknown below!
+        </h1>
+    </div>
+</div>
+<!-- /.row -->
+
+<!-- Project One -->
+<div class="row">
+
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="http://im.ziffdavisinternational.com/ign_nl/game/n/no-mans-sk/no-mans-sky_849r.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>No Man's Sky</h3>
+        <h4>Exploration Game</h4>
+        <p>No Man's Sky is a game about exploration and survival in an infinite procedurally 
+            generated universe.<br>
+            <b style="color:white">Was €44.99 now:</b>
+</p>
+        <a class="btn btn-success" href="@routes.HomeController.products()">€29.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Project Two -->
+<div class="row">
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/239954/3max.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>Minecraft</h3>
+        <h4>Exploration Game</h4>
+        <p>If you can imagine it, you can build it! Minecraft, the best-selling game on Xbox 360, is coming to Xbox One. Create and explore your very own world where the only limit is what you can imagine – just be sure to build a shelter when night comes to stay safe from monsters.
+Play on your own or join up to 8 friends in split screen mode.</p>
+        <a class="btn btn-warning" href="@routes.HomeController.products()">€14.99 <span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Project Three -->
+<div class="row">
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/249781/3max.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>Far Cry Primal</h3>
+        <h4>Exploration Game</h4>
+        <p>The award-winning Far Cry franchise that has stormed the tropics and the Himalayas now enters the original fight for humanity’s survival with its innovative open-world sandbox gameplay, bringing together massive beasts, breathtaking environments, and unpredictable savage encounters.
+Welcome to the Stone Age, a time of extreme danger and limitless adventure, when giant mammoths and sabretooth tigers ruled the Earth, and humanity is at the bottom of the food chain. As the last survivor of your hunting group, you will learn to craft a deadly arsenal, fend off fierce predators, and outsmart enemy tribes to conquer the land of Oros and become the Apex Predator.</p>
+        <a class="btn btn-primary" href="@routes.HomeController.products()">€49.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Project Four -->
+<div class="row">
+
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/243163/3max.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>Crackdown 3</h3>
+        <h4>Exploration Game</h4>
+        <p>Stop crime as a super-powered Agent of justice in Crackdown 3's hyper-powered sandbox of mayhem and destruction. Explore the heights of a futuristic city, race through the streets in a transforming vehicle, and use your powerful abilities to stop a ruthless criminal empire.
+Developed by original creator Dave Jones, Crackdown 3 delivers cooperative mayhem and an all-new multiplayer mode where destruction is your ultimate weapon powered by Microsoft Cloud.</p>
+        <a class="btn btn-danger" href="@routes.HomeController.products()">€59.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<br>
+        <a class="btn btn-primary2" href="@routes.HomeController.checkout()">Checkout here!<span class="glyphicon glyphicon-chevron-right"></span></a>
+<!-- /.row -->
+}

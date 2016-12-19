@@ -1,0 +1,69 @@
+@(user: models.users.User)
+
+@main("Early Access", user){
+<!-- Page Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header" style="text-align:center">Check out some of our Early Access offers below!
+        </h1>
+    </div>
+</div>
+<!-- /.row -->
+
+<!-- Project One -->
+<div class="row">
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="http://static1.gamespot.com/uploads/screen_kubrick/1197/11970954/3008985-trailer_h1z1_kingofthekill_20160218.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>H1Z1: King of the Kill</h3>
+        <h4>Early Access Game</h4>
+        <p>H1Z1: King of the Kill is a fast-paced shooter in which players compete in 
+            large-scale chaotic PvP spectacles of skill, wit and a little luck, where 
+            everyone must fight to the death to stand alone at the top of the podium.<br>
+            <b style="color:white">Was €29.99 now:</b></p>
+        <a class="btn btn-danger" href="@routes.HomeController.products()">€19.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Project Two -->
+<div class="row">
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="http://cdn.akamai.steamstatic.com/steam/apps/503350/header.jpg?t=1478708088" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>White Noise 2</h3>
+        <h4>Early Access Game</h4>
+        <p>Be a part of the investigator team, or take control of the creature and devour them! White Noise 2 offers a 4vs1 asymmetric horror experience that won't leave anyone unmoved.</p>
+        <a class="btn btn-success" href="@routes.HomeController.products()">€14.99 <span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Project Three -->
+<div class="row">
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="http://cdn.akamai.steamstatic.com/steam/apps/418030/header.jpg?t=1477426606" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>Subsistence</h3>
+        <h4>Early Access Game</h4>
+        <p>Subsistence is a sandbox, first person, open-world survival game (currently only singleplayer, with multiplayer in development). Struggle to build a base and gear-up in the hostile environment. Defend yourself from wildlife and AI hunters (who also build bases in the world).</p>
+        <a class="btn btn-primary" href="@routes.HomeController.products()">€24.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<br>
+        <a class="btn btn-primary2" href="@routes.HomeController.checkout()">Checkout here!<span class="glyphicon glyphicon-chevron-right"></span></a>
+<!-- /.row -->
+}

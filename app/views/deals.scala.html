@@ -1,0 +1,122 @@
+@(user: models.users.User)
+
+@main("Deals", user) {
+<!-- Page Content -->
+
+<!-- Page Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header" style="text-align:center">Check out some of our latest deals!
+        </h1>
+    </div>
+</div>
+<!-- /.row -->
+
+<!-- Project One -->
+<div class="row">
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="http://icdn3.digitaltrends.com/image/civilization-vi-art-845x1200.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>Sid Meier’s Civilization® VI</h3>
+        <h4>Strategy Game</h4>
+        <p>Civilization VI offers new ways to interact with your world, expand your
+            empire across the map, advance your culture, and compete against history’s
+            greatest leaders to build a civilization that will stand the test of time.
+            Play as one of 20 historical leaders including Roosevelt (America) and 
+            Victoria (England).<br>
+            <b style="color:white">Was €49.99 now:</b></p>
+        <a class="btn btn-danger" href="@routes.HomeController.products()">€29.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Project Two -->
+<div class="row">
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="http://images.pushsquare.com/games/ps4/farming_simulator_17/cover_large.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>Farming Simulator 17</h3>
+        <h4>Simulation Game</h4>
+        <p>Take on the role of a modern farmer in Farming Simulator 17! Explore farming possibilities
+                in a new North American environment. Drive over 250 farming vehicles and equipment from
+                over 75 manufacturers, including new brands such as Challenger, Fendt, Valtra or Massey Ferguson.<br>
+                <b style="color:white">Was €39.99 now:</b></p>
+        <a class="btn btn-warning" href="@routes.HomeController.products()">€24.99 <span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Project Three -->
+<div class="row">
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="http://cdn2-www.playstationlifestyle.net/assets/uploads/2014/07/dishonored-2-box-art.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>Dishonored 2</h3>
+        <h4>Action Game</h4>
+        <p>Reprise your role as a supernatural assassin in Dishonored 2 – the follow up to Arkane Studio's 
+            first-person action blockbuster and winner of more than 100 'Game of the Year' awards, 
+            Dishonored. Play your way in a world where mysticism and industry collide.<br>
+            <b style="color:white">Was €69.99 now:</b></p>
+        <a class="btn btn-primary" href="@routes.HomeController.products()">€49.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Project Four -->
+<div class="row">
+
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="http://im.ziffdavisinternational.com/ign_nl/game/n/no-mans-sk/no-mans-sky_849r.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>No Man's Sky</h3>
+        <h4>Exploration Game</h4>
+        <p>No Man's Sky is a game about exploration and survival in an infinite procedurally 
+            generated universe.<br>
+            <b style="color:white">Was €44.99 now:</b>
+</p>
+        <a class="btn btn-success" href="@routes.HomeController.products()">€29.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Project Five -->
+<div class="row">
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="http://static1.gamespot.com/uploads/screen_kubrick/1197/11970954/3008985-trailer_h1z1_kingofthekill_20160218.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>H1Z1: King of the Kill</h3>
+        <h4>Early Access Game</h4>
+        <p>H1Z1: King of the Kill is a fast-paced shooter in which players compete in 
+            large-scale chaotic PvP spectacles of skill, wit and a little luck, where 
+            everyone must fight to the death to stand alone at the top of the podium.<br>
+            <b style="color:white">Was €29.99 now:</b></p>
+        <a class="btn btn-danger" href="@routes.HomeController.products()">€19.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<br>
+        <a class="btn btn-primary2" href="@routes.HomeController.checkout()">Checkout here!<span class="glyphicon glyphicon-chevron-right"></span></a>
+<!-- /.row -->
+}

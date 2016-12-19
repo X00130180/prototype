@@ -1,0 +1,108 @@
+@(user: models.users.User)
+
+@main("Open World", user){
+<!-- Page Heading -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header" style="text-align:center">Journey through the open world!
+        </h1>
+    </div>
+</div>
+<!-- /.row -->
+
+<!-- Project One -->
+<div class="row">
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/243125/3max.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>Grand Theft Auto V</h3>
+        <h4>Open World Game</h4>
+        <p>Los Santos: a sprawling sun-soaked metropolis full of self-help gurus, starlets and fading celebrities, once the envy of the Western world, now struggling to stay afloat in an era of economic uncertainty and cheap reality TV.
+Amidst the turmoil, three very different criminals plot their own chances of survival and success: Franklin, a street hustler looking for real opportunities and serious money; Michael, a professional ex-con whose retirement is a lot less rosy than he hoped it would be; and Trevor, a violent maniac driven by the chance of a cheap high and the next big score. Running out of options, the crew risks everything in a series of daring and dangerous heists that could set them up for life.</p>
+        <a class="btn btn-primary" href="@routes.HomeController.products()">€59.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Project Two -->
+<div class="row">
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/247008/3max.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>Mafia III</h3>
+        <h4>Open World Game</h4>
+        <p>It’s 1968 and after years of combat in Vietnam, Lincoln Clay knows this truth: family isn’t who you’re born with, it’s who you die for. Now back home in New Bordeaux, Lincoln is set on escaping a criminal past. But when his surrogate family, the black mob, is betrayed and wiped out by the Italian Mafia, Lincoln builds a new family on the ashes of the old and blazes a path of military-grade revenge through those responsible. Intense gun fights, visceral hand-to-hand combat, white knuckle driving and street smarts will all be needed. But with the right crew, tough decisions and some dirty hands, it’s possible to make it to the top of the city's underworld.</p>
+        <a class="btn btn-warning" href="@routes.HomeController.products()">€69.99 <span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Project Three -->
+<div class="row">
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/240065/3max.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>Tom Clancy's: The Division</h3>
+        <h4>Open World Game</h4>
+        <p>We live in a complex world. The more advanced it gets, the more vulnerable it becomes. We’ve created a house of cards: remove just one, and everything falls apart.
+Black Friday – a devastating pandemic sweeps through New York City, and one by one, basic services fail. In only days, without food or water, society collapses into chaos. The Division, an autonomous unit of tactical agents, is activated. Leading seemingly ordinary lives among us, these agents are trained to operate independently in order to save society.</p>
+        <a class="btn btn-danger" href="@routes.HomeController.products()">€49.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Project Four -->
+<div class="row">
+
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/251726/3max.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>Watch Dogs 2</h3>
+        <h4>Open World Game</h4>
+        <p>Use hacking as a weapon in the massive & dynamic open world of Watch Dogs 2.
+In 2016, ctOS 2.0, an advanced operating system networking city infrastructure, was implemented in several US cities to create a safer, more efficient metropolis.
+Play as Marcus Holloway, a brilliant young hacker living in the birthplace of the tech revolution, the San Francisco Bay Area. Team up with Dedsec, a notorious group of hackers, and expose the hidden dangers of ctOS 2.0, which, in the hands of corrupt corporations, is being wrongfully used to monitor and manipulate citizens on a massive scale.</p>
+        <a class="btn btn-success" href="@routes.HomeController.products()">€69.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<!-- /.row -->
+
+<hr>
+
+<!-- Project Five -->
+<div class="row">
+    <div class="col-md-5">
+        <a href="@routes.HomeController.products()">
+            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/246730/3max.jpg" alt="">
+        </a>
+    </div>
+    <div class="col-md-7">
+        <h3>Fallout 4</h3>
+        <h4>Open World Game</h4>
+        <p>Bethesda Game Studios, the award-winning creators of Fallout 3 and The Elder Scrolls V: Skyrim, welcome you to the world of Fallout 4 – their most ambitious game ever, and the next generation of open-world gaming.
+As the sole survivor of Vault 111, you enter a world destroyed by nuclear war. Every second is a fight for survival, and every choice is yours. Only you can rebuild and determine the fate of the Wasteland. Welcome home</p>
+        <a class="btn btn-primary" href="@routes.HomeController.products()">€39.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</div>
+<br>
+        <a class="btn btn-primary2" href="@routes.HomeController.checkout()">Checkout here!<span class="glyphicon glyphicon-chevron-right"></span></a>
+<!-- /.row -->
+}
