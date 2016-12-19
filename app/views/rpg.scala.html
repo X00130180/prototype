@@ -1,104 +1,41 @@
-@(user: models.users.User)
+@(products: List[models.Product], categories: List[models.Category], user: models.users.User, env: play.api.Environment)
 
-@main("RPG", user){
+<!-- Pass page title and content {html between braces} to the main view -->
+@main("Role Playing Game", user) {
 <!-- Page Heading -->
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header" style="text-align:center">Browse the best RPG's below!
+        <h1 class="page-header" style="text-align:center">Jump straight into the Action here!
         </h1>
     </div>
 </div>
 <!-- /.row -->
 
 <!-- Project One -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="http://cdn.cgmagonline.com/wp-content/uploads/2015/05/cover-ps4-the-witcher-3-wild-hunt.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>The Witcher 3: Wild Hunt</h3>
-        <h4>Role Playing Game (RPG)</h4>
-        <p>Unparalleled novel-like story, spanning over 100 hours of gameplay With over 100 hours of core and side-quest gameplay, The Witcher combines the intense, plot-driven pull of traditional RPGs with the freedom of choice only open world games can offer. Develop Geralt's skills to create your unique gameplay experience, make choices and face their consequences that will stay with you throughout the entire game. Genre-defining, truly next generation audio-visual fidelity Built exclusively for next-generation hardware: PlayStation 4, Xbox One and PC, The Witcher 3: Wild Hunt marks a new era in RPG visual quality. Raising the bar for the entire genre, with its deeply integrated 7.1 audio and jaw-dropping graphics powered by CD Projekt RED's proprietary REDengine 3, The Witcher 3: Wild Hunt promises an entirely new kind of experience.</p>
-        <a class="btn btn-warning" href="@routes.HomeController.products()">€39.99 <span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
+@for(p <- products) {
+    @if(p.getCategory.getName.equals("Role Playing Game")){
+        <div class="row">
+            <div class="col-md-5">
+                <!-- Display each product field value in a column -->
+                <a href="@routes.HomeController.products()">
+                @if(env.resource("public/images/productImages/thumbnails/" + p.getId + ".jpg").isDefined) {
+                    <img class="img-responsive" src="/assets/images/productImages/@(p.getId + ".jpg")" alt="">
+                } else {
+                    <img class="img-responsive" src="/assets/images/productImages/noImage.png"/>
+                }
+                </a>
+            </div>
+            <div class="col-md-7">
+                <h3>@p.getName</h3>
+                <h4>@p.getCategory.getName</h4>
+                <p>@p.getDescription</p>
+                <a class="btn btn-success" href="@routes.HomeController.products()">€59.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
 
-<hr>
-
-<!-- Project Two -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/239016/3max.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Final Fantasy XV</h3>
-        <h4>Role Playing Game(RPG)</h4>
-        <p>FINAL FANTASY XV is a ground-breaking fantasy based on reality - with revolutionary gameplay, awe-inspiring graphics, and cutting-edge technology. Escaping the flames of war, Noctis, the Crown Prince of the Kingdom of Lucis, embarks on an epic journey with his best friends - through a world of larger-than-life beasts, amazing wonders to behold, and dungeons filled with danger, in the hopes of finding the strength to take back his homeland and end the battle.</p>
-        <a class="btn btn-success" href="@routes.HomeController.products()">€79.99 <span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-
-<hr>
-
-<!-- Project Three -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/246097/3max.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Deus Ex: Mankind Divided</h3>
-        <h4>Role Playing Game(RPG)</h4>
-        <p>The year is 2029, and mechanically augmented humans have now been deemed outcasts, living a life of complete and total segregation from the rest of society.
-Now an experienced covert operative, Adam Jensen is forced to operate in a world that has grown to despise his kind. Armed with a new arsenal of state-of-the-art weapons and augmentations, he must choose the right approach, along with who to trust, in order to unravel a vast worldwide conspiracy.</p>
-        <a class="btn btn-primary" href="@routes.HomeController.products()">€49.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-
-<hr>
-
-<!-- Project Four -->
-<div class="row">
-
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/252468/3max.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>The Technomancer</h3>
-        <h4>Role Playing Game(RPG)</h4>
-        <p>Spiders studio is back with The Technomancer, a new post-apocalyptic RPG set in a cyberpunk world for PlayStation 4, Xbox One and PC set on Mars during the War of Water, where an aspiring Technomancer faces a myriad of questions as his future grows threatened by the secrets of his past.
-An RPG, The Technomancer will offer players action-oriented combat gameplay along four different skill trees, focusing on 3 different fighting styles and the destructive electric-focused powers of the Technomancers. But all situations aren’t necessarily to be dealt with brute strength, with dynamic conversation dialogue playing a deep role in quests, changing the story depending on the decisions you make. Craft equipment, weapons and armor for yourself and for the companions you’ll recruit along your adventure, nurturing relationships with them.</p>
-        <a class="btn btn-danger" href="@routes.HomeController.products()">€39.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-
-<hr>
-
-<!-- Project Five -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/246932/3max.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Dark Souls III</h3>
-        <h4>Role Playing Game(RPG)</h4>
-        <p>As fires fade and the world falls into ruin, developer FROMSOFTWARE and director Hidetaka Miyazaki continue their critically-acclaimed and genre-defining series with Dark Souls III. Fans and newcomers alike will get lost in the games hallmark rewarding gameplay and immersive graphics. Now only embers remain…</p>
-        <a class="btn btn-warning" href="@routes.HomeController.products()">€59.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
+        <hr>
+    }
+}
 <br>
         <a class="btn btn-primary2" href="@routes.HomeController.checkout()">Checkout here!<span class="glyphicon glyphicon-chevron-right"></span></a>
 <!-- /.row -->

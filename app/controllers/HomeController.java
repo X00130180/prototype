@@ -57,40 +57,175 @@ public class HomeController extends Controller {
         return ok(contactus.render(getUserFromSession()));
     }
 
-    public Result sports(){
-        return ok(sports.render(getUserFromSession()));
+    public Result sports(Long cat) {
+
+        // Get list of all categories in ascending order
+        List<Category> categoriesList = Category.findAll();
+        List<Product> productsList = new ArrayList<Product>();
+
+        if (cat == 0) {
+            // Get list of all categories in ascending order
+            productsList = Product.findAll();
+        }
+        else {
+            // Get products for selected category
+            // Find category first then extract products for that cat.
+            productsList = Category.find.ref(cat).getProducts();
+        }
+
+        return ok(sports.render(productsList, categoriesList, getUserFromSession(), env));
     }
 
-    public Result rpg(){
-        return ok(rpg.render(getUserFromSession()));
+    public Result rpg(Long cat) {
+
+        // Get list of all categories in ascending order
+        List<Category> categoriesList = Category.findAll();
+        List<Product> productsList = new ArrayList<Product>();
+
+        if (cat == 0) {
+            // Get list of all categories in ascending order
+            productsList = Product.findAll();
+        }
+        else {
+            // Get products for selected category
+            // Find category first then extract products for that cat.
+            productsList = Category.find.ref(cat).getProducts();
+        }
+
+        return ok(rpg.render(productsList, categoriesList, getUserFromSession(), env));
     }
 
-    public Result fps(){
-        return ok(fps.render(getUserFromSession()));
+    public Result fps(Long cat) {
+
+        // Get list of all categories in ascending order
+        List<Category> categoriesList = Category.findAll();
+        List<Product> productsList = new ArrayList<Product>();
+
+        if (cat == 0) {
+            // Get list of all categories in ascending order
+            productsList = Product.findAll();
+        }
+        else {
+            // Get products for selected category
+            // Find category first then extract products for that cat.
+            productsList = Category.find.ref(cat).getProducts();
+        }
+
+        return ok(fps.render(productsList, categoriesList, getUserFromSession(), env));
     }
 
-    public Result openworld(){
-        return ok(openworld.render(getUserFromSession()));
+    public Result openworld(Long cat) {
+
+        // Get list of all categories in ascending order
+        List<Category> categoriesList = Category.findAll();
+        List<Product> productsList = new ArrayList<Product>();
+
+        if (cat == 0) {
+            // Get list of all categories in ascending order
+            productsList = Product.findAll();
+        }
+        else {
+            // Get products for selected category
+            // Find category first then extract products for that cat.
+            productsList = Category.find.ref(cat).getProducts();
+        }
+
+        return ok(openworld.render(productsList, categoriesList, getUserFromSession(), env));
     }
 
-    public Result action(){
-        return ok(action.render(getUserFromSession()));
+    public Result action(Long cat) {
+
+        // Get list of all categories in ascending order
+        List<Category> categoriesList = Category.findAll();
+        List<Product> productsList = new ArrayList<Product>();
+
+        if (cat == 0) {
+            // Get list of all categories in ascending order
+            productsList = Product.findAll();
+        }
+        else {
+            // Get products for selected category
+            // Find category first then extract products for that cat.
+            productsList = Category.find.ref(cat).getProducts();
+        }
+
+        return ok(action.render(productsList, categoriesList, getUserFromSession(), env));
     }
 
-    public Result explore(){
-        return ok(explore.render(getUserFromSession()));
+    public Result explore(Long cat) {
+
+        // Get list of all categories in ascending order
+        List<Category> categoriesList = Category.findAll();
+        List<Product> productsList = new ArrayList<Product>();
+
+        if (cat == 0) {
+            // Get list of all categories in ascending order
+            productsList = Product.findAll();
+        }
+        else {
+            // Get products for selected category
+            // Find category first then extract products for that cat.
+            productsList = Category.find.ref(cat).getProducts();
+        }
+
+        return ok(explore.render(productsList, categoriesList, getUserFromSession(), env));
     }
 
-    public Result strategy(){
-        return ok(strategy.render(getUserFromSession()));
+    public Result strategy(Long cat) {
+
+        // Get list of all categories in ascending order
+        List<Category> categoriesList = Category.findAll();
+        List<Product> productsList = new ArrayList<Product>();
+
+        if (cat == 0) {
+            // Get list of all categories in ascending order
+            productsList = Product.findAll();
+        }
+        else {
+            // Get products for selected category
+            // Find category first then extract products for that cat.
+            productsList = Category.find.ref(cat).getProducts();
+        }
+
+        return ok(strategy.render(productsList, categoriesList, getUserFromSession(), env));
     }
 
-    public Result simulation(){
-        return ok(simulation.render(getUserFromSession()));
+    public Result simulation(Long cat) {
+
+        // Get list of all categories in ascending order
+        List<Category> categoriesList = Category.findAll();
+        List<Product> productsList = new ArrayList<Product>();
+
+        if (cat == 0) {
+            // Get list of all categories in ascending order
+            productsList = Product.findAll();
+        }
+        else {
+            // Get products for selected category
+            // Find category first then extract products for that cat.
+            productsList = Category.find.ref(cat).getProducts();
+        }
+
+        return ok(simulation.render(productsList, categoriesList, getUserFromSession(), env));
     }
 
-    public Result early(){
-        return ok(early.render(getUserFromSession()));
+    public Result early(Long cat) {
+
+        // Get list of all categories in ascending order
+        List<Category> categoriesList = Category.findAll();
+        List<Product> productsList = new ArrayList<Product>();
+
+        if (cat == 0) {
+            // Get list of all categories in ascending order
+            productsList = Product.findAll();
+        }
+        else {
+            // Get products for selected category
+            // Find category first then extract products for that cat.
+            productsList = Category.find.ref(cat).getProducts();
+        }
+
+        return ok(early.render(productsList, categoriesList, getUserFromSession(), env));
     }
 
     public Result checkout(){

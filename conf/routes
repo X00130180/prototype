@@ -7,15 +7,15 @@ GET     /                           controllers.HomeController.index()
 GET     /genre                      controllers.HomeController.genre
 GET     /deals                      controllers.HomeController.deals
 GET     /contactus                  controllers.HomeController.contactus
-GET     /sports                     controllers.HomeController.sports
-GET     /rpg                        controllers.HomeController.rpg
-GET     /fps                        controllers.HomeController.fps
-GET     /openworld                  controllers.HomeController.openworld
-GET     /action                     controllers.HomeController.action
-GET     /explore                    controllers.HomeController.explore
-GET     /strategy                   controllers.HomeController.strategy
-GET     /simulation                 controllers.HomeController.simulation
-GET     /early                      controllers.HomeController.early
+GET     /sports                     controllers.HomeController.sports(cat:Long ?=0L)
+GET     /rpg                        controllers.HomeController.rpg(cat:Long ?=0L)
+GET     /fps                        controllers.HomeController.fps(cat:Long ?=0L)
+GET     /openworld                  controllers.HomeController.openworld(cat:Long ?=0L)
+GET     /action                     controllers.HomeController.action(cat:Long ?=0L)
+GET     /explore                    controllers.HomeController.explore(cat:Long ?=0L)
+GET     /strategy                   controllers.HomeController.strategy(cat:Long ?=0L)
+GET     /simulation                 controllers.HomeController.simulation(cat:Long ?=0L)
+GET     /early                      controllers.HomeController.early(cat:Long ?=0L)
 GET     /products                   controllers.HomeController.products(cat:Long ?=0L)
 GET     /checkout                   controllers.HomeController.checkout
 

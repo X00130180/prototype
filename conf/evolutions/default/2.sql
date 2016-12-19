@@ -26,7 +26,6 @@ insert into product (id,category_id,name, description,stock,price) values ( prod
 insert into product (id,category_id,name, description,stock,price) values ( product_seq.nextval,4,'Battlefield 4','BF4 FPS',30,69.99 );
 insert into product (id,category_id,name, description,stock,price) values ( product_seq.nextval,2,'H1Z1','Survive!',50,19.99 );
 insert into product (id,category_id,name, description,stock,price) values ( product_seq.nextval,8,'NHL 16','Hockey game',75,49.99 );
-insert into product (id,category_id,name, description,stock,price) values ( product_seq.nextval,4,'Call Of Duty: Infinite Warfare','COD FPS',50,69.99 );
 insert into product (id,category_id,name, description,stock,price) values ( product_seq.nextval,9,'Civilisation VI','Ultimate Strategy Game!',15,29.99 );
 insert into product (id,category_id,name, description,stock,price) values ( product_seq.nextval,7,'Farming Simulator 17','Play as a farmer!',5,24.99 );
 insert into product (id,category_id,name, description,stock,price) values ( product_seq.nextval,1,'Dishonored II','Latest of franchise',15,49.99 );

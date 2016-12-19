@@ -1,77 +1,41 @@
-@(user: models.users.User)
+@(products: List[models.Product], categories: List[models.Category], user: models.users.User, env: play.api.Environment)
 
-@main("Strategy", user){
+<!-- Pass page title and content {html between braces} to the main view -->
+@main("Strategy", user) {
 <!-- Page Heading -->
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header" style="text-align:center">Decipher your way through these!
+        <h1 class="page-header" style="text-align:center">Jump straight into the Action here!
         </h1>
     </div>
 </div>
 <!-- /.row -->
 
 <!-- Project One -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="http://icdn3.digitaltrends.com/image/civilization-vi-art-845x1200.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Sid Meier’s Civilization® VI</h3>
-        <h4>Strategy Game</h4>
-        <p>Civilization VI offers new ways to interact with your world, expand your
-            empire across the map, advance your culture, and compete against history’s
-            greatest leaders to build a civilization that will stand the test of time.
-            Play as one of 20 historical leaders including Roosevelt (America) and 
-            Victoria (England).<br>
-            <b style="color:white">Was €49.99 now:</b></p>
-        <a class="btn btn-danger" href="@routes.HomeController.products()">€29.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
+@for(p <- products) {
+    @if(p.getCategory.getName.equals("Strategy")){
+        <div class="row">
+            <div class="col-md-5">
+                <!-- Display each product field value in a column -->
+                <a href="@routes.HomeController.products()">
+                @if(env.resource("public/images/productImages/thumbnails/" + p.getId + ".jpg").isDefined) {
+                    <img class="img-responsive" src="/assets/images/productImages/@(p.getId + ".jpg")" alt="">
+                } else {
+                    <img class="img-responsive" src="/assets/images/productImages/noImage.png"/>
+                }
+                </a>
+            </div>
+            <div class="col-md-7">
+                <h3>@p.getName</h3>
+                <h4>@p.getCategory.getName</h4>
+                <p>@p.getDescription</p>
+                <a class="btn btn-success" href="@routes.HomeController.products()">€59.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
 
-<hr>
-
-<!-- Project Two -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/246369/3max.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Total War: Warhammer</h3>
-        <h4>Strategy Game</h4>
-        <p>The Old World echoes to the clamour of ceaseless battle. The only constant is WAR!
-A fantasy strategy game of legendary proportions, Total War: WARHAMMER combines an addictive turn-based campaign of epic empire-building with explosive, colossal, real-time battles, all set in the vivid and incredible world of Warhammer Fantasy Battles.
-Command four wholly different races: the Empire, the Dwarfs, the Vampire Counts and the Greenskins, each with their own unique characters, battlefield units and play style.
-Lead your forces to war as one of eight Legendary Lords from the Warhammer Fantasy Battles World, arming them with fabled weapons, armour and deadly battle magic; hard-won in individual quest chains.
-For the first time in a Total War game, harness storms of magical power to aid you in battle and take to the skies with flying creatures, from ferocious dragons and wyverns to gigantic griffons.
-Hundreds of hours of gameplay await you at the dawn of a new era. Total War: WARHAMMER brings to life a world of legendary heroes, towering monsters, flying creatures, storms of magical power and regiments of nightmarish warriors.</p>
-        <a class="btn btn-warning" href="@routes.HomeController.products()">€34.99 <span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-
-<hr>
-
-<!-- Project Three -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/253266/3max.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>XCOM 2</h3>
-        <h4>Strategy Game</h4>
-        <p>XCOM 2 is the sequel to the 2012 Game of the Year, award-winning strategy game, XCOM: Enemy Unknown.
-Earth has changed. Twenty years have passed since world leaders offered an unconditional surrender to alien forces and XCOM, the planet’s last line of defense, was left decimated and scattered. Now the aliens rule Earth, building shining cities that promise a brilliant future for humanity on the surface, while concealing a sinister agenda below and eliminating all who dissent from their new order.
-Only those who live at the edges of the world have a margin of freedom. Here, a force gathers once again to stand up for humanity. Always on the run, the remnant XCOM forces must find a way to rise from the ashes, expose the insidious truth behind the occupation, and eliminate the alien threat once and for all.</p>
-        <a class="btn btn-primary" href="@routes.HomeController.products()">€44.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
+        <hr>
+    }
+}
 <br>
         <a class="btn btn-primary2" href="@routes.HomeController.checkout()">Checkout here!<span class="glyphicon glyphicon-chevron-right"></span></a>
 <!-- /.row -->

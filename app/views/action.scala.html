@@ -1,6 +1,7 @@
-@(user: models.users.User)
+@(products: List[models.Product], categories: List[models.Category], user: models.users.User, env: play.api.Environment)
 
-@main("Action", user){
+<!-- Pass page title and content {html between braces} to the main view -->
+@main("Action", user) {
 <!-- Page Heading -->
 <div class="row">
     <div class="col-lg-12">
@@ -11,107 +12,30 @@
 <!-- /.row -->
 
 <!-- Project One -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="http://cdn2-www.playstationlifestyle.net/assets/uploads/2014/07/dishonored-2-box-art.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Dishonored 2</h3>
-        <h4>Action Game</h4>
-        <p>Reprise your role as a supernatural assassin in Dishonored 2 – the follow up to Arkane Studio's 
-            first-person action blockbuster and winner of more than 100 'Game of the Year' awards, 
-            Dishonored. Play your way in a world where mysticism and industry collide.<br>
-            <b style="color:white">Was €69.99 now:</b></p>
-        <a class="btn btn-primary" href="@routes.HomeController.products()">€49.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
+@for(p <- products) {
+    @if(p.getCategory.getName.equals("Action")){
+        <div class="row">
+            <div class="col-md-5">
+                <!-- Display each product field value in a column -->
+                <a href="@routes.HomeController.products()">
+                @if(env.resource("public/images/productImages/thumbnails/" + p.getId + ".jpg").isDefined) {
+                    <img class="img-responsive" src="/assets/images/productImages/@(p.getId + ".jpg")" alt="">
+                } else {
+                    <img class="img-responsive" src="/assets/images/productImages/noImage.png"/>
+                }
+                </a>
+            </div>
+            <div class="col-md-7">
+                <h3>@p.getName</h3>
+                <h4>@p.getCategory.getName</h4>
+                <p>@p.getDescription</p>
+                <a class="btn btn-success" href="@routes.HomeController.products()">€59.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
 
-<hr>
-
-<!-- Project Two -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/246889/3max.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Hitman</h3>
-        <h4>Action Game</h4>
-        <p>Play as Agent 47 to take out powerful high-profile targets in an intense spy-thriller story across a world of assassination.
-Released in a day one edition SteelBook®, HITMAN: The Complete First Season will deliver the ultimate physical version of the game, with over 100 hours of gameplay. Featuring all of the Season One locations and episodes from the Prologue, France and Italy to Morocco, Thailand, USA and Japan.</p>
-        <a class="btn btn-warning" href="@routes.HomeController.products()">€44.99 <span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-
-<hr>
-
-<!-- Project Three -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/239962/3max.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Mirror's Edge: Catalyst</h3>
-        <h4>Action Game</h4>
-        <p>In a city where information is heavily monitored, agile couriers called Runners transport sensitive data away from prying eyes.
-
-In this seemingly utopian paradise, a crime has been committed, your sister has been framed and now you are being hunted. You are a Runner called Faith - and this innovative first-person action-adventure is your story.
-
-Mirror’s Edge™ delivers you straight into the shoes of this unique heroine as she traverses the vertigo-inducing cityscape, engaging in intense combat and fast paced chases. With a never before seen sense of movement and perspective, you will be drawn into Faith’s world. A world that is visceral, immediate, and very dangerous. Live or die? Soar or plummet? One thing is certain, in this city you will learn how to run.
-
-From the makers of the groundbreaking Battlefield franchise, Mirror’s Edge is an action-adventure experience unlike any other.</p>
-        <a class="btn btn-danger" href="@routes.HomeController.products()">€39.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-
-<hr>
-
-<!-- Project Four -->
-<div class="row">
-
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/241839/3max.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Uncharted 4: A Thief's' End</h3>
-        <h4>Action</h4>
-        <p>A return to the fray
-Brothers in harm's way
-Set three years after the events of Uncharted 3: Drake’s Deception, Nathan Drake has presumably left the world of fortune hunting behind. However, it doesn’t take long for fate to come calling when Drake’s brother, Sam, resurfaces seeking his help to save his own life and offering an adventure Drake can’t resist.
-
-On the hunt for Captain Henry Avery’s long-lost treasure, Sam and Drake set off to find Libertalia, the pirate utopia deep in the forests of Madagascar. Uncharted 4: A Thief’s End takes players on a journey around the globe, through jungle isles, far-flung cities and snow-capped peaks on the search for Avery’s fortune.</p>
-        <a class="btn btn-success" href="@routes.HomeController.products()">€59.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-
-<hr>
-
-<!-- Project Five -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="https://static-ie.gamestop.ie/images/products/256104/3max.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Tom Clancy's Rainbow Six Siege</h3>
-        <h4>Action</h4>
-        <p>Tom Clancy’s Rainbow Six® Siege is the newest installment of the acclaimed first-person shooter franchise, developed by the renowned Ubisoft Montreal studio for the new generation of home console and PC.
-It is an exciting, new approach to the first-person shooter experience that puts tactical combat and masterful destruction at the center of the action. In Rainbow Six Siege, Counter-Terrorist Unit Operators lead teams through tense and thrilling combat scenarios, where success is achieved through smart preparation and strategic improvisation</p>
-        <a class="btn btn-primary" href="@routes.HomeController.products()">€49.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
+        <hr>
+    }
+}
 <br>
         <a class="btn btn-primary2" href="@routes.HomeController.checkout()">Checkout here!<span class="glyphicon glyphicon-chevron-right"></span></a>
 <!-- /.row -->

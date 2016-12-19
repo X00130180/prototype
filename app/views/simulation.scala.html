@@ -1,68 +1,41 @@
-@(user: models.users.User)
+@(products: List[models.Product], categories: List[models.Category], user: models.users.User, env: play.api.Environment)
 
-@main("Simulation", user){
+<!-- Pass page title and content {html between braces} to the main view -->
+@main("Simulation", user) {
 <!-- Page Heading -->
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header" style="text-align:center">Is it real? Check out these top simulation Games!
+        <h1 class="page-header" style="text-align:center">Jump straight into the Action here!
         </h1>
     </div>
 </div>
 <!-- /.row -->
 
 <!-- Project One -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="http://images.pushsquare.com/games/ps4/farming_simulator_15/cover_large.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Farming Simulator 17</h3>
-        <h4>Simulation Game</h4>
-        <p>Take on the role of a modern farmer in Farming Simulator 17! Explore farming possibilities
-                in a new North American environment. Drive over 250 farming vehicles and equipment from
-                over 75 manufacturers, including new brands such as Challenger, Fendt, Valtra or Massey Ferguson.<br>
-                <b style="color:white">Was €39.99 now:</b></p>
-        <a class="btn btn-warning" href="@routes.HomeController.products()">€24.99 <span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
+@for(p <- products) {
+    @if(p.getCategory.getName.equals("Simulation")){
+        <div class="row">
+            <div class="col-md-5">
+                <!-- Display each product field value in a column -->
+                <a href="@routes.HomeController.products()">
+                @if(env.resource("public/images/productImages/thumbnails/" + p.getId + ".jpg").isDefined) {
+                    <img class="img-responsive" src="/assets/images/productImages/@(p.getId + ".jpg")" alt="">
+                } else {
+                    <img class="img-responsive" src="/assets/images/productImages/noImage.png"/>
+                }
+                </a>
+            </div>
+            <div class="col-md-7">
+                <h3>@p.getName</h3>
+                <h4>@p.getCategory.getName</h4>
+                <p>@p.getDescription</p>
+                <a class="btn btn-success" href="@routes.HomeController.products()">€59.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
 
-<hr>
-
-<!-- Project Two -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="http://images.pushsquare.com/games/ps4/goat_simulator/cover_large.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Goat Simulator</h3>
-        <h4>Simulation Game</h4>
-        <p>Goat Simulator is the latest in goat simulation technology, bringing next-gen goat simulation to YOU. You no longer have to fantasize about being a goat, your dreams have finally come true! WASD to write history.</p>
-        <a class="btn btn-danger" href="@routes.HomeController.products()">€9.99 <span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-
-<hr>
-
-<!-- Project Three -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="http://cdn.shopify.com/s/files/1/0361/1665/products/ATS_cov_RGB.jpg?v=1454509576" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>American Truck Simulator</h3>
-        <h4>Simulation Game</h4>
-        <p>Experience legendary American trucks and deliver various cargoes across sunny California, sandy Nevada, and the Grand Canyon State of Arizona. American Truck Simulator takes you on a journey through the breathtaking landscapes and widely recognized landmarks around the States.</p>
-        <a class="btn btn-success" href="@routes.HomeController.products()">€14.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
+        <hr>
+    }
+}
 <br>
         <a class="btn btn-primary2" href="@routes.HomeController.checkout()">Checkout here!<span class="glyphicon glyphicon-chevron-right"></span></a>
 <!-- /.row -->

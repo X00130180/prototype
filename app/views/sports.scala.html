@@ -1,126 +1,41 @@
-@(user: models.users.User)
+@(products: List[models.Product], categories: List[models.Category], user: models.users.User, env: play.api.Environment)
 
-@main("Sports", user){
+<!-- Pass page title and content {html between braces} to the main view -->
+@main("Sports", user) {
 <!-- Page Heading -->
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header" style="text-align:center">Buy your favourite Sports Games here!
+        <h1 class="page-header" style="text-align:center">Jump straight into the Action here!
         </h1>
     </div>
 </div>
 <!-- /.row -->
 
 <!-- Project One -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="http://gearnuke.com/wp-content/uploads/2016/06/fifa-17-box-art.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Fifa 17</h3>
-        <h4>Sports Game</h4>
-        <p>New Football Worlds - Frostbite injects even more detail into the worlds of FIFA 17. Experience all new environments like tunnels, locker rooms, the manager's office, and the team plane. Experience Life in the Premier League - For the first time ever in FIFA, live your story on and off the pitch as the Premier League's next rising star, Alex Hunter. Play on any club in the Premier league, for authentic managers and alongside some of the best players on the planet. Experience brand new worlds in FIFA 17, all while navigating your way through the emotional highs and lows of The Journey.</p>
-        <a class="btn btn-danger" href="@routes.HomeController.products()">€59.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
+@for(p <- products) {
+    @if(p.getCategory.getName.equals("Sports")){
+        <div class="row">
+            <div class="col-md-5">
+                <!-- Display each product field value in a column -->
+                <a href="@routes.HomeController.products()">
+                @if(env.resource("public/images/productImages/thumbnails/" + p.getId + ".jpg").isDefined) {
+                    <img class="img-responsive" src="/assets/images/productImages/@(p.getId + ".jpg")" alt="">
+                } else {
+                    <img class="img-responsive" src="/assets/images/productImages/noImage.png"/>
+                }
+                </a>
+            </div>
+            <div class="col-md-7">
+                <h3>@p.getName</h3>
+                <h4>@p.getCategory.getName</h4>
+                <p>@p.getDescription</p>
+                <a class="btn btn-success" href="@routes.HomeController.products()">€59.99<span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
 
-<hr>
-
-<!-- Project Two -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="https://assets.vg247.com/current//2016/04/nba_2k17_legend_edition_ps4_cover_1.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>NBA 2K17</h3>
-        <h4>Sports Game</h4>
-        <p>Following the record-breaking launch of NBA 2K16, the NBA 2K franchise continues to stake its claim as the most authentic sports video game with NBA 2K17. As the franchise that “all sports video games should aspire to be” (GamesRadar), NBA 2K17 will take the game to new heights and continue to blur the lines between video game and reality.</p>
-        <a class="btn btn-warning" href="@routes.HomeController.products()">€49.99 <span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-
-<hr>
-
-<!-- Project Three -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/I/816M5LfZtCL._SL1500_.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Rocket League: Collectors Edition</h3>
-        <h4>Sports Game</h4>
-        <p>Includes every item from the previously-released DLC alongside four exclusive vehicles
-Fantastic Multiplayer: 4-Player Splitscreen, 8-Player Online, Ranked and Unranked play
-Game modes include Exhibition , Unfair Mode and a full Offline Season Mode
-Personalize your vehicle with hundreds of different items for more THAN 100 BILLION possible combinations!
-Includes Replay Viewer, customizable controls, Mutator game-variants (Ball Type, Speed, Boost Strength etc), and more!</p>
-        <a class="btn btn-primary" href="@routes.HomeController.products()">€19.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-
-<hr>
-
-<!-- Project Four -->
-<div class="row">
-
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="http://images.pushsquare.com/games/ps4/f1_2016/cover_large.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>F1 2016</h3>
-        <h4>Sports Game</h4>
-        <p>F1 2016 will include the most immersive career mode we’ve ever featured, and will release onto PlayStation®4, Xbox One and Windows PC (DVD and via Steam) this summer.
-F1 2016’s new career mode spans 10 seasons and will take you deeper into the world’s most glamorous, exciting and prestigious motorsport, both on and off the track. The life-like recreation of the sport will be further enhanced by the addition of the sport’s iconic Safety Car and Virtual Safety Car, which have been written from the ground up, as well as the introduction of the challenging new street circuit in Baku, Azerbaijan for the 2016 FORMULA 1 GRAND PRIX OF EUROPE.</p>
-        <a class="btn btn-success" href="@routes.HomeController.products()">€49.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-
-<hr>
-
-<!-- Project Five -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="http://images.pushsquare.com/games/ps4/madden_nfl_17/cover_large.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>Madden NFL 2017</h3>
-        <h4>Sports Game</h4>
-        <p>Take your team all the way in Madden NFL 17 with a renewed focus on Franchise mode, putting you at the center of your team’s Championship run. Arm your team for gridiron glory on both sides of the ball with the most balanced gameplay to date, featuring all-new ball carrier feedback cues, defender fake out mechanics and an innovative, authentic defensive AI system. Madden NFL 17 is the most complete Madden … ever.</p>
-        <a class="btn btn-danger" href="@routes.HomeController.products()">€69.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
-<!-- /.row -->
-
-<hr>
-
-<!-- Project Six -->
-<div class="row">
-    <div class="col-md-5">
-        <a href="@routes.HomeController.products()">
-            <img class="img-responsive" src="http://i1258.photobucket.com/albums/ii532/csedin14/NHL%2017%20Custom%20Covers%20-%20Front%20Cover/James%20Van%20Riemsdyk%20PS4.jpg" alt="">
-        </a>
-    </div>
-    <div class="col-md-7">
-        <h3>NHL 17</h3>
-        <h4>Sports Game</h4>
-        <p>Take your EA SPORTS Hockey League team to the next level by progressing through ranks to unlock customization items and give your uniform a unique look, or use the all-new Arena Creator to build the home ice you’ve always wanted. Celebrate career defining Moments in Be a Pro and immerse yourself into the most exciting Hockey Ultimate Team ever with the introduction of team Synergy, completely changing the way you build and play your dream team.
-See What's New</p>
-        <a class="btn btn-primary" href="@routes.HomeController.products()">€59.99<span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div>
-</div>
+        <hr>
+    }
+}
 <br>
         <a class="btn btn-primary2" href="@routes.HomeController.checkout()">Checkout here!<span class="glyphicon glyphicon-chevron-right"></span></a>
 <!-- /.row -->
